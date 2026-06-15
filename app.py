@@ -165,9 +165,9 @@ st.markdown("""
 # ---------------------------------------------------
 @st.cache_data
 def load_data():
-    books = pd.read_csv("Books.csv")
-    ratings = pd.read_csv("Ratings.csv")
-    users = pd.read_csv("Users.csv")
+    books = pd.read_csv("data/Books.csv")
+    ratings = pd.read_csv("data/Ratings.csv")
+    users = pd.read_csv("data/Users.csv")
 
     rated_books = ratings.merge(books, on="ISBN")
 
@@ -281,7 +281,7 @@ if "selected_book" not in st.session_state:
 # ---------------------------------------------------
 st.markdown("""
 <div class="header">
-    <h1>📚 Book Recommender</h1>
+    <h1>📚 Welcome To Bookverse</h1>
     <p>Discover your next favorite read</p>
 </div>
 """, unsafe_allow_html=True)
@@ -304,7 +304,7 @@ st.subheader("Find Similar Books")
 query = st.text_input("Type a book name", 
                       placeholder="e.g. Harry Potter and the Sorcerer's Stone")
 
-if st.button("✨ Recommend"):
+if st.button("✨ Get Recommendations"):
     if query.strip():
         matches = [
             b for b in pvt_table.index
