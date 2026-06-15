@@ -1,7 +1,7 @@
 # Book Recommender System
 
 Live Demo:
-https://your-app-name.streamlit.app
+https://book-recommendation-system-09.streamlit.app
 
 Features:
 - Collaborative filtering
